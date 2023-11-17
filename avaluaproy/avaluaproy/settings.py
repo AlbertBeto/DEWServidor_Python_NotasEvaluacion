@@ -40,6 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 #UD6.2.e Incluyo la avaluapp
     'avaluapp',
+    #UD6.2.f Incluyo las apps creadas
+    'common',
+    'core',
+    'programacion_didactica',
+    'programacion_aula',
+
 ]
 
 MIDDLEWARE = [
