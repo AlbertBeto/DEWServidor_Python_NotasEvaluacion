@@ -17,6 +17,9 @@ class ResAprendizaje(models.Model):
 
     def __str__(self):
         return {self.codigo}'.'{self.descripcion[:100]}
+    # UD6.3.c Incluir clase meta y unique_together con los valores tabla 3
+    class Meta:
+        unique_together =[[modulo,codigo]]
 
 class CritEvaluacion(models.Model):
     resultado_aprendizaje = models.ForeignKey(ResAprendizaje,on_delete=models.PROTECT)
@@ -26,3 +29,6 @@ class CritEvaluacion(models.Model):
 
      def __str__(self):
         return {self.resultado_aprendizaje}'.'{self.codigo}'.'{self.descripcion[:100]}
+    # UD6.3.c Incluir clase meta y unique_together con los valores tabla 3
+    class Meta:
+        unique_together =[[resultado_aprendizaje,codigo]]

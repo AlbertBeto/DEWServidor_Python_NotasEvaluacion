@@ -40,3 +40,6 @@ class PondCritUD(models.Model):
 
     def __str__(self):
         return {str(self.unidad)}':'{str(self.criterio_evaluacion)}'-('+self.porcentaje+')'
+    # UD6.3.c Incluir clase meta y unique_together con los valores tabla 3
+    class Meta:
+        unique_together =[[criterio_evaluacion,unidad]]
