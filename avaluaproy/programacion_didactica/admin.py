@@ -19,3 +19,4 @@ class PondRAAdmin(admin.ModelAdmin):
     #Con la __ vinculamos la busqueda con el resultado. 
     search_fields = ['resultado_aprendizaje__codigo','resultado_aprendizaje__descripcion',]
     preserve_filters = [True,]
+
