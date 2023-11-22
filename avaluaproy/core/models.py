@@ -21,6 +21,10 @@ class ResAprendizaje(models.Model):
     # UD6.3.c Incluir clase meta y unique_together con los valores tabla 3
     class Meta:
         unique_together =[["modulo","codigo"]]
+        # UD6.4.e Doy valores a verbose_name y verbose_name_plural
+        verbose_name = "Resultado de aprendizaje"
+        verbose_name_plural = "Resultados de aprendizaje"
+
 
 class CritEvaluacion(models.Model):
     resultado_aprendizaje = models.ForeignKey(ResAprendizaje,on_delete=models.PROTECT)
@@ -33,3 +37,6 @@ class CritEvaluacion(models.Model):
     # UD6.3.c Incluir clase meta y unique_together con los valores tabla 3
     class Meta:
         unique_together =[["resultado_aprendizaje","codigo"]]
+        # UD6.4.e Doy valores a verbose_name y verbose_name_plural
+        verbose_name = "Criterio de evaluación"
+        verbose_name_plural = "Criterios de evaluación"

@@ -45,3 +45,6 @@ class PondCritUD(models.Model):
     # UD6.3.c Incluir clase meta y unique_together con los valores tabla 3
     class Meta:
         unique_together =[['criterio_evaluacion','unidad']]
+        # UD6.4.e Doy valores a verbose_name y verbose_name_plural
+        verbose_name = "Ponderación critero de unidad"
+        verbose_name_plural = "Ponderaciónes criteros de unidad"
