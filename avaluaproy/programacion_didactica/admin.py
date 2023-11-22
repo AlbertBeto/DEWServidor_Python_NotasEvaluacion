@@ -31,7 +31,7 @@ class PondCritAdmin(admin.ModelAdmin):
 class PondCritUDAdmin(admin.ModelAdmin):
     list_display = list_display_links = ('unidad','criterio_evaluacion','porcentaje',)
     #posible error.
-    list_filter = ('resultado_aprendizaje', 'unidad')
+    list_filter = ('criterio_evaluacion__resultado_aprendizaje', 'unidad')
     search_fields = ['criterio_evaluacion__codigo','criterio_evaluacion__descripcion','criterio_evaluacion__resultado_aprendizaje__codigo','criterio_evaluacion__resultado_aprendizaje__descripcion','unidad__nombre',]
     preserve_filters = [True,]
 

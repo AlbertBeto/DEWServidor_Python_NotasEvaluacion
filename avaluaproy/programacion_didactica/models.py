@@ -1,4 +1,6 @@
 from django.db import models
+from core.models import ResAprendizaje
+from core.models import CritEvaluacion
 
 # Create your models here.
 # UD6.3.a Creo los modelos siguiendo la tabla 1
@@ -8,7 +10,7 @@ class Unidad(models.Model):
     nombre = models.CharField(max_length = 256, unique=True)
 
     def __str__(self):
-       return {self.codigo}'-'{self.nombre}
+       return {self.codigo}-{self.nombre}
 
 class InstEvaluacion(models.Model):
     codigo = models.CharField(max_length = 4, unique=True)
@@ -16,21 +18,21 @@ class InstEvaluacion(models.Model):
     descripcion = models.TextField()
 
     def __str__(self):
-        return {self.codigo}'-'{self.nombre}
+        return {self.codigo}-{self.nombre}
 
 class PondRA(models.Model):
     resultado_aprendizaje = models.ForeignKey(ResAprendizaje,on_delete=models.PROTECT)
     porcentaje = models.DecimalField(max_digits = 5, decimal_places = 2, default = 0.0)
 
     def __str__(self):
-        return {str(self.resultado_aprendizaje)}'-'{str(self.porcentaje)}
+        return f"{str(self.resultado_aprendizaje)}-{str(self.porcentaje)}"
 
 class PondCriterio(models.Model):
     criterio_evaluacion = models.ForeignKey(CritEvaluacion,on_delete=models.PROTECT)
     porcentaje = models.DecimalField(max_digits = 5, decimal_places = 2, default = 0.0)
     
     def __str__(self):
-        return {str(self.criterio_evaluacion)}'-'{self.porcentaje}
+        return {str(self.criterio_evaluacion)}-{self.porcentaje}
 
 
 class PondCritUD(models.Model):
@@ -39,7 +41,7 @@ class PondCritUD(models.Model):
     porcentaje = models.DecimalField(max_digits = 5, decimal_places = 2, default = 0.0)
 
     def __str__(self):
-        return {str(self.unidad)}':'{str(self.criterio_evaluacion)}'-('+self.porcentaje+')'
+        return f"{str(self.unidad)}:{str(self.criterio_evaluacion)}-(+self.porcentaje+')'"
     # UD6.3.c Incluir clase meta y unique_together con los valores tabla 3
     class Meta:
-        unique_together =[[criterio_evaluacion,unidad]]
+        unique_together =[['criterio_evaluacion','unidad']]
