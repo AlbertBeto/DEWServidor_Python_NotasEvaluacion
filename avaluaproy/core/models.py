@@ -12,6 +12,9 @@ class Modulo(models.Model):
     def __str__(self):
         return self.nombre
     class Meta:
+        # UD6.4.e Doy valores a verbose_name y verbose_name_plural
+        verbose_name = "Modulo"
+        verbose_name_plural = "Modulos"
         # UD6.4.f Incorporo el ordering
         ordering = ['codigo']
 
