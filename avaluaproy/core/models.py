@@ -1,4 +1,5 @@
 from django.db import models
+#from programacion_didactica.models import PondCriterio
 
 
 # Create your models here.
@@ -10,6 +11,9 @@ class Modulo(models.Model):
 
     def __str__(self):
         return self.nombre
+    class Meta:
+        # UD6.4.f Incorporo el ordering
+        ordering = ['codigo']
 
 class ResAprendizaje(models.Model):
     modulo = models.ForeignKey(Modulo,on_delete=models.PROTECT)
@@ -24,6 +28,8 @@ class ResAprendizaje(models.Model):
         # UD6.4.e Doy valores a verbose_name y verbose_name_plural
         verbose_name = "Resultado de aprendizaje"
         verbose_name_plural = "Resultados de aprendizaje"
+        # UD6.4.f Incorporo el ordering
+        ordering = ['codigo']
 
 
 class CritEvaluacion(models.Model):
@@ -40,3 +46,5 @@ class CritEvaluacion(models.Model):
         # UD6.4.e Doy valores a verbose_name y verbose_name_plural
         verbose_name = "Criterio de evaluación"
         verbose_name_plural = "Criterios de evaluación"
+        # UD6.4.f Incorporo el ordering
+        ordering = ['resultado_aprendizaje__codigo'] #, 'criterio_evaluacion__codigo']

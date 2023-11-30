@@ -10,7 +10,7 @@ class Unidad(models.Model):
     nombre = models.CharField(max_length = 256, unique=True)
 
     def __str__(self):
-       return {self.codigo}-{self.nombre}
+       return f"{self.codigo}-{self.nombre}"
 
 class InstEvaluacion(models.Model):
     codigo = models.CharField(max_length = 4, unique=True)
