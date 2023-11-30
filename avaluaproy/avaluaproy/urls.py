@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 
 from common import views as common_views
 from core import views as core_views
+from programacion_didactica import views as proDidactica_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,6 +32,17 @@ urlpatterns = [
     path('ra_detail/<int:pk>/', core_views.RADetailView.as_view(), name='ra_detail'),
     path('ce_list/', core_views.CEListView.as_view(), name='ce_list'),
     path('ce_detail/<int:pk>/', core_views.CEDetailView.as_view(), name='ce_detail'),
+    
+    path('unidad_list/', proDidactica_views.UnidadListView.as_view(), name='unidad_list'),
+    path('unidad_detail/<int:pk>/', proDidactica_views.UnidadDetailView.as_view(), name='unidad_detail'),
+    path('ie_list/', proDidactica_views.InstEvListView.as_view(), name='ie_list'), 
+    path('ie_detail/<int:pk>/', proDidactica_views.InstEvDetailView.as_view(), name='ie_detail'), 
+    path('pond_ra_list/', proDidactica_views.PondRAListView.as_view(), name='pond_ra_list'),    
+    path('pond_ra_detail/<int:pk>/', proDidactica_views.PondRADetailView.as_view(), name='pond_ra_detail'),
+    path('pond_ce_list/', proDidactica_views.PondCritListView.as_view(), name='pond_ce_list'),
+    path('pond_ce_detail/<int:pk>/', proDidactica_views.PondCritDetailView.as_view(), name='pond_ce_detail'),
+    path('pond_ce_ud_list/', proDidactica_views.PondCritUDListView.as_view(), name='pond_ce_ud_list'),
+    path('pond_ce_ud_detail/<int:pk>/', proDidactica_views.PondCritUDDetailView.as_view(), name='pond_ce_ud_detail'),
 ]
 
 if settings.DEBUG:

@@ -16,7 +16,7 @@ class InstEvListView(ListView):
     model = InstEvaluacion
     template_name = 'programacion_didactica/ie_list.html'
 
-class UnidadDetailView(DetailView):
+class InstEvDetailView(DetailView):
     model = InstEvaluacion
     template_name = 'programacion_didactica/ie_detail.html'
 
