@@ -18,7 +18,7 @@ class InstEvaluacion(models.Model):
     descripcion = models.TextField()
 
     def __str__(self):
-        return {self.codigo}-{self.nombre}
+        return f"{self.codigo}-{self.nombre}"
 
 class PondRA(models.Model):
     resultado_aprendizaje = models.ForeignKey(ResAprendizaje,on_delete=models.PROTECT)
@@ -32,7 +32,7 @@ class PondCriterio(models.Model):
     porcentaje = models.DecimalField(max_digits = 5, decimal_places = 2, default = 0.0)
     
     def __str__(self):
-        return {str(self.criterio_evaluacion)}-{self.porcentaje}
+        return f"{str(self.criterio_evaluacion)}-{self.porcentaje}"
 
 
 class PondCritUD(models.Model):
