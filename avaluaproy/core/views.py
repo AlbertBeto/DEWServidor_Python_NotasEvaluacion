@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from core.models import Modulo, ResultadoAprendizaje, CriterioEvaluacion
+from core.models import Modulo, ResAprendizaje, CritEvaluacion
 
 
 class ModuloListView(ListView):
@@ -14,20 +14,20 @@ class ModuloDetailView(DetailView):
 
 
 class RAListView(ListView):
-    model = ResultadoAprendizaje
+    model = ResAprendizaje
     template_name = 'core/ra_list.html'
 
 
 class RADetailView(DetailView):
-    model = ResultadoAprendizaje
+    model = ResAprendizaje
     template_name = 'core/ra_detail.html'
 
 
 class CEListView(ListView):
-    model = CriterioEvaluacion
+    model = CritEvaluacion
     template_name = 'core/ce_list.html'
 
 
 class CEDetailView(DetailView):
-    model = CriterioEvaluacion
+    model = CritEvaluacion
     template_name = 'core/ce_detail.html'

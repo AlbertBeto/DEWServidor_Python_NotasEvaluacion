@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from core.models import Unidad
+from programacion_didactica.models import Unidad
 from programacion_didactica.models import InstEvaluacion, PondRA, PondCriterio, PondCritUD
 
 # Create your views here.
