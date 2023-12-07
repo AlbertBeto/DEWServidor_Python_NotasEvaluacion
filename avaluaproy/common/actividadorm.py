@@ -1,6 +1,6 @@
 from django.db import models
 
-
+# UD6.6 6.6.c RA6.c
 from core.models import Modulo, CritEvaluacion, ResAprendizaje
 from programacion_didactica.models import InstEvaluacion, PondRA, PondCriterio, PondCritUD, Unidad
 
