@@ -1,0 +1,15 @@
+{% extends "common/base_intranet.html" %}
+
+
+{% block main_content %}
+<div class="container">
+    <h1>Lista de unidades</h1>
+    <ul class="list-group mt-3">
+    {% for ud in object_list %}
+        <a href="{% url 'unidad_detail' ud.id %}" class="list-group-item list-group-item-action">{{ ud }}</a>
+    {% empty %}
+        <p>No existen unidades.</p>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock main_content %}
