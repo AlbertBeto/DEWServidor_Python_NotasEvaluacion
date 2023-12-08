@@ -4,6 +4,7 @@ from programacion_didactica.models import Unidad
 from programacion_didactica.models import InstEvaluacion, PondRA, PondCriterio, PondCritUD
 
 # Create your views here.
+# UD6.7.a Creo las views siguiendo tabla 1 de anexos III
 class UnidadListView(ListView):
     model = Unidad
     template_name = 'programacion_didactica/unidad_list.html'

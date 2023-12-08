@@ -1,6 +1,6 @@
 from django.db import models
 
-# UD6.6 6.6.c RA6.c
+# UD6.6 6.6.c RA6.c Creo las funciones siguiendo el anexo IV
 from core.models import Modulo, CritEvaluacion, ResAprendizaje
 from programacion_didactica.models import InstEvaluacion, PondRA, PondCriterio, PondCritUD, Unidad
 

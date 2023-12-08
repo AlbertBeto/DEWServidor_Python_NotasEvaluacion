@@ -32,7 +32,7 @@ urlpatterns = [
     path('ra_detail/<int:pk>/', core_views.RADetailView.as_view(), name='ra_detail'),
     path('ce_list/', core_views.CEListView.as_view(), name='ce_list'),
     path('ce_detail/<int:pk>/', core_views.CEDetailView.as_view(), name='ce_detail'),
-    
+    # UD6.7.b Creo las urls siguiendo tabla 2 de anexos III
     path('unidad_list/', proDidactica_views.UnidadListView.as_view(), name='unidad_list'),
     path('unidad_detail/<int:pk>/', proDidactica_views.UnidadDetailView.as_view(), name='unidad_detail'),
     path('ie_list/', proDidactica_views.InstEvListView.as_view(), name='ie_list'), 
